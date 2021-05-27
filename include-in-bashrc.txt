@@ -58,4 +58,13 @@ function docker_run() {
 docker run --rm=True -u $(id -u):$(id -g) -v $(pwd):/data "$@"
 }
 
+# from https://www.stefaanlippens.net/pretty-csv.html
+# these appear to be debian/ubuntu specific. column may not be availble on other linux OS's
+function pretty_tsv {
+    column -t -s $'\t' -n "$@" | less -F -S -X -K
+}
+
+function pretty_csv {
+    column -t -s, -n "$@" | less -F -S -X -K
+}
 
