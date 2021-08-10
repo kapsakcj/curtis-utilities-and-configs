@@ -13,6 +13,9 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias ......='cd ../../../../../'
 
+# make a directory and cd into it simultaneously
+function mcd { mkdir -p "$1" && cd "$1";}
+
 # pack and unpack tar.gz files
 alias tarup="tar -zcf"
 alias tardown="tar -zxf"
